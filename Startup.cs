@@ -36,7 +36,7 @@ namespace MusicApi
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MusicApi", Version = "v1" });
             });
 
-            services.AddDbContext<ApiDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<ApiDbContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
 
         }
 
